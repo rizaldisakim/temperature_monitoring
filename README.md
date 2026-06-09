@@ -1,4 +1,4 @@
-# temperature_monitoring
+## Temperature Monitoring
 Individual Development Project as part of Enrichhment Program, focusing on fryer area temperature monitoring between LH3 and LH4
 
 ## 🛠️ Tech Stack & Architecture
