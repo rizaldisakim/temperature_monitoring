@@ -1,0 +1,21 @@
+if (msg.payload && msg.payload.value !== undefined) {
+    let suhu = parseFloat(msg.payload.value);
+    let pesan = "";
+
+    // KONDISI 1: BAHAYA (Di atas atau sama dengan 40°C)
+    if (suhu >= 40.0) {
+        pesan = `⚠️ *PERINGATAN!* ⚠️\n\n• *Status:* NOT OK!\n• *Suhu:* ${suhu}°C\n_Mohon segera periksa kondisi area fryer!._`;
+    } 
+    // KONDISI 2: STABIL / NORMAL (Di antara 35.0°C sampai 39.9°C)
+    else if (suhu >= 30.0 && suhu < 40.0) {
+        pesan = `✅ *PERINGATAN* ✅\n\n• *Status:* OK\n• *Suhu:* ${suhu}°C\n_Kondisi area fryer LH3 dan LH4 sesuai standar._`;
+    } 
+    // Kirim ke Slack jika pesan terisi
+    if (pesan !== "") {
+        msg.payload = JSON.stringify({ text: pesan });
+        msg.headers = { "Content-Type": "application/json" };
+        msg.timeout = 30000;
+        return msg;
+    }
+}
+return null;
