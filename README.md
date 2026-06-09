@@ -8,7 +8,7 @@ Project ini dibangun menggunakan infrastruktur berbasis *baremetal* langsung di 
 | Layer | Teknologi / Tools | Deskripsi |
 | :--- | :--- | :--- |
 | **Hardware / Sensors** | `Zigbee Sensors` | Sensor nirkabel untuk mendeteksi suhu & kelembaban di area mesin fryer. |
-| **Edge Gateway OS** | `Ubuntu Server` | Sistem Operasi utama tempat seluruh service berjalan native di latar belakang. |
+| **Edge Gateway OS** | `Ubuntu Desktop` | Sistem Operasi utama tempat seluruh service berjalan native di latar belakang. |
 | **Ingestion Layer** | `Zigbee2MQTT` | Menerjemahkan sinyal nirkabel Zigbee menjadi payload data JSON via serial dongle. |
 | **Processing Layer** | `Node-RED` | *Data broker* untuk memproses payload, memfilter duplikasi, dan mengarahkan alur data. |
 | **Storage Layer** | `InfluxDB` | *Time-Series Database* untuk menampung data historis secara efisien. |
